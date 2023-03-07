@@ -1,5 +1,10 @@
 <template>
-
+    <div class="container">
+        <input type="text">
+        <button>
+            Send
+        </button>
+    </div>
 </template>
   
   <script>
