@@ -1,5 +1,5 @@
 <template>
-  <Header @fetchMovies="fetchMovies"/>
+  <Header @fetchMovies="fetchMovies" @fetchSeries="fetchSeries"/>
   <Main />
 </template>
 
@@ -61,7 +61,4 @@
 <style lang="scss" >
   @use './style/general.scss';
 
-  header{
-    border-color: peachpuff;
-  }
 </style>
