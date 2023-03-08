@@ -9,19 +9,19 @@
                         <h3>{{ movie.title }}</h3>
                         <h5>{{ movie.original_title }}</h5>
                         <img :src="getFlagIcon(movie.original_language)" alt="#">
-                        <p>{{ movie.vote_average }}</p>
+                        <p>{{ voteIntMovies }}</p>
                     </div>
                 </div>
             </div>
-            <h2>SERIES</h2>
+            <h2 class="series_title">SERIES</h2>
             <div class="movie_items">
                 <div class="movie_print" v-for="series in store.series" :key="series.id">
-                    <img class="poster" :src="series.imageUrl + movie.poster_path" alt="#">
+                    <img class="poster" :src="store.imageUrl + series.poster_path" alt="#">
                     <div class="info">
                         <h3>{{ series.name }}</h3>
                         <h5>{{ series.original_name }}</h5>
                         <img :src="getFlagIcon(series.original_language)" alt="#">
-                        <p>{{ series.vote_average }}</p>
+                        <p>{{ voteIntSeries }}</p>
                     </div>
                 </div>
             </div>
@@ -39,8 +39,10 @@
       data() {
         return {
             store,
+            voteIntSeries: Math.round(store.series.vote_average / 2),
+            voteIntMovies: Math.round(store.movies.vote_average / 2),
         }
-      },
+    },
       methods: {
         getFlagIcon(language) {
             return `https://flagcdn.com/16x12/${language}.png`;
@@ -78,6 +80,10 @@
     .poster{
         min-width: 224px;
         min-height: 336px;
+    }
+    
+    .series_title{
+        margin-top: 30px;
     }
 
   </style>

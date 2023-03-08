@@ -2,7 +2,7 @@
     <div class="container">
         <div class="header_section">
             <input class="search" type="text" v-model="store.search" placeholder="Filter by name">
-            <button class="header_button" @click="$emit('fetchMovies','fetchSeries')">
+            <button class="header_button" @click="$emit('fetchData')">
                 Cerca
             </button>
         </div>

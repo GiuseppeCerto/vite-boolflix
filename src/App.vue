@@ -1,5 +1,5 @@
 <template>
-  <Header @fetchMovies="fetchMovies" @fetchSeries="fetchSeries"/>
+  <Header @fetchData="fetchData"/>
   <Main />
 </template>
 
@@ -23,6 +23,10 @@
         }
       },      
       methods: {
+        fetchData() {
+          this.fetchMovies();
+          this.fetchSeries();
+        },
         fetchMovies() {
           axios.get('https://api.themoviedb.org/3/search/movie?',{
             params: {
