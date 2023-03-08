@@ -33,6 +33,8 @@
           .then(res => {
             console.log(res.data.results)
             this.store.movies = res.data.results
+          }).catch(err =>{
+            this.store.movies = []
           })
           
         }

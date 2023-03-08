@@ -5,7 +5,8 @@
                 <img :src="store.imageUrl + movie.poster_path" alt="#">
                 <h3>{{ movie.title }}</h3>
                 <h5>{{ movie.original_title }}</h5>
-                <p>{{ movie.original_language}}</p>
+                <img :src="getFlagIcon(movie.original_language)" alt="#">
+                <p>{{ movie.original_language }}</p>
                 <p>{{ movie.vote_average }}</p>
             </li>
         </ul>
@@ -25,6 +26,11 @@
             store,
         }
       },
+      methods: {
+        getFlagIcon(language) {
+            return `https://flagcdn.com/16x12/${language}.png`;
+            }
+        }
     }
 
   </script>
