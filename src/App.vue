@@ -27,6 +27,7 @@
           axios.get('https://api.themoviedb.org/3/search/movie?',{
             params: {
               api_key: 'e99307154c6dfb0b4750f6603256716d',
+              language: 'it_IT',
               query: this.store.search,
             }
           })
@@ -37,6 +38,21 @@
             this.store.movies = []
           })
           
+        },
+        fetchSeries() {
+          axios.get('https://api.themoviedb.org/3/search/tv?', {
+            params: {
+              api_key: 'e99307154c6dfb0b4750f6603256716d',
+              language: 'it_IT',
+              query: this.store.search,
+            }
+          })
+          .then(res => {
+            console.log(res.data.results)
+            this.store.series = res.data.results
+          }).catch(err => {
+            this.store.series = []
+          })
         }
       }
     }
