@@ -79,13 +79,24 @@
     }
 
     .movie_print{
-        background-color: rgba($color: #000000, $alpha: 0.5);
-        border-radius: 8px;
+        position: relative;
+    }
+
+    .movie_print:hover{
+        filter: opacity(0.5);
+    }
+    .movie_print:hover .info{
+        display: block;
     }
 
     .info{
         margin: 5px 10px 5px 10px;
+        position: absolute;
+        top: 40px;
+        display: none;
+        z-index: 99;
     }
+
     .info *{
         margin-top: 10px;
     }
@@ -94,6 +105,5 @@
         min-width: 224px;
         min-height: 336px;
     }
-
 
   </style>
