@@ -82,11 +82,11 @@
         position: relative;
     }
 
-    .movie_print:hover{
-        filter: opacity(0.5);
+    .poster:hover{
+        filter:brightness(0.5);
     }
     .movie_print:hover .info{
-        display: block;
+        display:block;
     }
 
     .info{
@@ -95,6 +95,8 @@
         top: 40px;
         display: none;
         z-index: 99;
+        color: white;
+        pointer-events: none;
     }
 
     .info *{
