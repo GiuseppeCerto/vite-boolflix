@@ -11,7 +11,7 @@
                         <img :src="getFlagIcon(movie.original_language)" alt="#">
                         <p>
                             <span v-for="i in 5" :key="i">
-                              <font-awesome-icon :icon="[(i <= Math.round(movie.vote_average)) ? 'fas' : 'far','fa-star']" />
+                              <font-awesome-icon :icon="[(i <= voteInt(movie.vote_average)) ? 'fa-solid' : 'fa-regular','fa-star']" />
                             </span>
                         </p>
                     </div>
@@ -25,7 +25,11 @@
                         <h3>{{ series.name }}</h3>
                         <h5>{{ series.original_name }}</h5>
                         <img :src="getFlagIcon(series.original_language)" alt="#">
-
+                        <p>
+                            <span v-for="i in 5" :key="i">
+                              <font-awesome-icon :icon="[(i <= voteInt(series.vote_average)) ? 'fa-solid' : 'fa-regular','fa-star']" />
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
