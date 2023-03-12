@@ -70,6 +70,7 @@
 
     .main_container{
         background-color: rgb(41, 41, 41);
+        min-height: 100vh;
         color: grey;
         padding-bottom: 30px;
     }
