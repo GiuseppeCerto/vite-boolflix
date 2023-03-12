@@ -1,7 +1,7 @@
 <template>
     <main class="main_container">
         <div class="container">
-            <h2>MOVIES</h2>
+            <h2 class="title">MOVIES</h2>
             <div class="movie_items">
                 <div class="movie_print" v-for="movie in store.movies" :key="movie.id">
                     <img class="poster" :src="store.imageUrl + movie.poster_path" alt="#">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <h2 class="series_title">SERIES</h2>
+            <h2 class="title">SERIES</h2>
             <div class="movie_items">
                 <div class="movie_print" v-for="series in store.series" :key="series.id">
                     <img class="poster" :src="store.imageUrl + series.poster_path" alt="#">
@@ -69,13 +69,18 @@
   <style lang="scss" scoped>
 
     .main_container{
-        padding-top: 30px;
+        background-color: rgb(41, 41, 41);
+        color: grey;
+        padding-bottom: 30px;
+    }
+
+    .title{
+        padding: 40px 0;
     }
     .movie_items{
         display: grid;
         grid-template-columns: repeat(5,1fr);
         grid-gap: 20px;
-        margin-top: 50px;
     }
 
     .movie_print{
